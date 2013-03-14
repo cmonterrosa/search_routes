@@ -1,0 +1,19 @@
+<h1>Genetic Algorithm</h1>
+<%=
+   h "Some random selected tours costs: "
+      3.times do
+        c = Ai4r::GeneticAlgorithm::Chromosome.seed
+        h "COST #{-1 * c.fitness} TOUR: "+ "#{c.data.collect{|c| @data_set.data_labels[c]} * ', '}"
+      end
+      h "Beginning genetic search, please wait... "
+      search = Ai4r::GeneticAlgorithm::GeneticSearch.new(800, 100)
+      result = search.run
+      h "COST #{-1 * result.fitness} KM TOUR: "+
+      "#{result.data.collect{|c| @data_set.data_labels[c]} * ', '}"
+      # $7611.99 TOUR: Moscow, Kiev, Warsaw, Hamburg, Berlin, Vienna, Munich, Milan, Rome, Barcelona, Madrid, Paris, Brussels, London, Dublin
+      # $7659.81 TOUR: Moscow, Kiev, Warsaw, Vienna, Munich, Berlin, Hamburg, Brussels, Dublin, London, Paris, Milan, Rome, Barcelona, Madrid
+      # $7596.74 TOUR: Moscow, Kiev, Warsaw, Berlin, Hamburg, Vienna, Munich, Milan, Rome, Barcelona, Madrid, Paris, Brussels, London Dublin
+%>
+
+
+<p>Restart</p>

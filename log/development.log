@@ -1,0 +1,190 @@
+
+
+Processing MainController#index (for 127.0.0.1 at 2013-03-13 11:05:06) [GET]
+Completed in 35ms (View: 33, DB: 0) | 200 OK [http://localhost/main]
+
+
+Processing MainController#index (for 127.0.0.1 at 2013-03-13 11:09:21) [GET]
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/main]
+
+
+Processing MainController#index (for 127.0.0.1 at 2013-03-13 11:14:06) [GET]
+
+Errno::ENOENT (No such file or directory - /home/cmonterrosa/NetBeansProjects/search_routes/public/data/travel_cost.csv):
+  /lib/data_set.rb:64:in `initialize'
+  /lib/data_set.rb:64:in `open'
+  /lib/data_set.rb:64:in `open_csv_file'
+  /lib/data_set.rb:53:in `load_csv'
+  /lib/data_set.rb:76:in `load_csv_with_labels'
+  app/controllers/main_controller.rb:11:in `index'
+
+Rendered rescues/_trace (105.0ms)
+Rendered rescues/_request_and_response (68.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2013-03-13 11:14:32) [GET]
+Rendering main/index
+
+ActionView::TemplateError (undefined local variable or method `data_set' for #<ActionView::Base:0xb6d9c090>) on line #7 of app/views/main/index.html.erb:
+4:       3.times do
+5:         c = Ai4r::GeneticAlgorithm::Chromosome.seed
+6:         puts "COST #{-1 * c.fitness} TOUR: "+
+7:         "#{c.data.collect{|c| data_set.data_labels[c]} * ', '}"
+8:       end
+9:       puts "Beginning genetic search, please wait... "
+10:       search = Ai4r::GeneticAlgorithm::GeneticSearch.new(800, 100)
+
+    app/views/main/index.html.erb:7
+    app/views/main/index.html.erb:7:in `collect'
+    app/views/main/index.html.erb:7
+    app/views/main/index.html.erb:4:in `times'
+    app/views/main/index.html.erb:4
+
+Rendered rescues/_trace (123.7ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2013-03-13 11:16:08) [GET]
+Rendering main/index
+
+ActionView::TemplateError (undefined local variable or method `data_set' for #<ActionView::Base:0xb6e1f954>) on line #7 of app/views/main/index.html.erb:
+4:       3.times do
+5:         c = Ai4r::GeneticAlgorithm::Chromosome.seed
+6:         puts "COST #{-1 * c.fitness} TOUR: "+
+7:         "#{c.data.collect{|c| data_set.data_labels[c]} * ', '}"
+8:       end
+9:       puts "Beginning genetic search, please wait... "
+10:       search = Ai4r::GeneticAlgorithm::GeneticSearch.new(800, 100)
+
+    app/views/main/index.html.erb:7
+    app/views/main/index.html.erb:7:in `collect'
+    app/views/main/index.html.erb:7
+    app/views/main/index.html.erb:4:in `times'
+    app/views/main/index.html.erb:4
+
+Rendered rescues/_trace (47.2ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2013-03-13 11:27:53) [GET]
+Rendering main/index
+
+ActionView::TemplateError (undefined local variable or method `data_set' for #<ActionView::Base:0xb6a7f2a4>) on line #7 of app/views/main/index.html.erb:
+4:       3.times do
+5:         c = Ai4r::GeneticAlgorithm::Chromosome.seed
+6:         puts "COST #{-1 * c.fitness} TOUR: "+
+7:         "#{c.data.collect{|c| data_set.data_labels[c]} * ', '}"
+8:       end
+9:       puts "Beginning genetic search, please wait... "
+10:       search = Ai4r::GeneticAlgorithm::GeneticSearch.new(800, 100)
+
+    app/views/main/index.html.erb:7
+    app/views/main/index.html.erb:7:in `collect'
+    app/views/main/index.html.erb:7
+    app/views/main/index.html.erb:4:in `times'
+    app/views/main/index.html.erb:4
+
+Rendered rescues/_trace (43.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2013-03-13 11:29:36) [GET]
+Rendering main/index
+
+ActionView::TemplateError (undefined local variable or method `data_set' for #<ActionView::Base:0xb6d20314>) on line #14 of app/views/main/index.html.erb:
+11:       3.times do
+12:         c = Ai4r::GeneticAlgorithm::Chromosome.seed
+13:         puts "COST #{-1 * c.fitness} TOUR: "+
+14:         "#{c.data.collect{|c| data_set.data_labels[c]} * ', '}"
+15:       end
+16:       puts "Beginning genetic search, please wait... "
+17:       search = Ai4r::GeneticAlgorithm::GeneticSearch.new(800, 100)
+
+    app/views/main/index.html.erb:14
+    app/views/main/index.html.erb:14:in `collect'
+    app/views/main/index.html.erb:14
+    app/views/main/index.html.erb:11:in `times'
+    app/views/main/index.html.erb:11
+
+Rendered rescues/_trace (45.9ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2013-03-13 11:31:55) [GET]
+Rendering main/index
+Completed in 22895ms (View: 22876, DB: 0) | 200 OK [http://localhost/main]
+
+
+Processing MainController#index (for 127.0.0.1 at 2013-03-13 11:33:30) [GET]
+Rendering main/index
+Completed in 19564ms (View: 19546, DB: 0) | 200 OK [http://localhost/main]
+
+
+Processing MainController#index (for 127.0.0.1 at 2013-03-13 12:01:01) [GET]
+Rendering main/index
+Completed in 19228ms (View: 19209, DB: 0) | 200 OK [http://localhost/main]
+
+
+Processing MainController#dynamic_table (for 127.0.0.1 at 2013-03-13 12:01:21) [GET]
+
+Errno::ENOENT (No such file or directory - RAILS_ROOT/public/data/travel_cost.csv):
+  app/controllers/main_controller.rb:36:in `initialize'
+  app/controllers/main_controller.rb:36:in `open'
+  app/controllers/main_controller.rb:36:in `dynamic_table'
+
+Rendered rescues/_trace (41.8ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#dynamic_table (for 127.0.0.1 at 2013-03-13 12:02:31) [GET]
+Completed in 18ms (View: 17, DB: 0) | 200 OK [http://localhost/main/dynamic_table]
+
+
+Processing MainController#dynamic_table (for 127.0.0.1 at 2013-03-13 12:41:03) [GET]
+
+NoMethodError (undefined method `[]' for #<File:0xb6c5e368>):
+  app/controllers/main_controller.rb:40:in `dynamic_table'
+
+Rendered rescues/_trace (40.1ms)
+Rendered rescues/_request_and_response (7.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#dynamic_table (for 127.0.0.1 at 2013-03-13 12:41:36) [GET]
+
+NoMethodError (private method `split' called for #<File:0xb6d42144>):
+  app/controllers/main_controller.rb:40:in `dynamic_table'
+
+Rendered rescues/_trace (43.4ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#dynamic_table (for 127.0.0.1 at 2013-03-13 12:43:55) [GET]
+Completed in 118ms (View: 99, DB: 0) | 200 OK [http://localhost/main/dynamic_table]
+
+
+Processing MainController#dynamic_table (for 127.0.0.1 at 2013-03-13 12:52:29) [GET]
+
+NoMethodError (undefined method `move' for #<File:0xb6cbdca0>):
+  app/controllers/main_controller.rb:41:in `dynamic_table'
+
+Rendered rescues/_trace (99.5ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#dynamic_table (for 127.0.0.1 at 2013-03-13 13:10:24) [GET]
+
+NoMethodError (undefined method `move' for #<File:0xb6f63b6c>):
+  app/controllers/main_controller.rb:41:in `dynamic_table'
+
+Rendered rescues/_trace (37.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)

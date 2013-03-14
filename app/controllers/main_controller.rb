@@ -34,22 +34,41 @@ class MainController < ApplicationController
 
     def dynamic_table
       file = File.open("#{RAILS_ROOT}/public/data/travel_cost.csv")
-      places = Hash.new
+      @places = Hash.new
+      counter=0
       array_of_values=[]
       # Create de hash keys
       list_places = file.readline.split(",")
-      file.move(1)
-      list_places.each do |place| places["#{place}"] = Hash.new end
+      list_places.each do |place| 
+        @places["#{place}"] = Hash.new
+        list_places.each do |place_loop|
+            if place_loop != place
+             @places["#{place}"]["#{place_loop}"] = 0
+            end
+        end
+      end
+
+
+
       file.each_line { |line|
-        first_line ||= line.split(",")
+        values = line.split(",")
+        if counter > 0
+          loop_counter=0
+          list_places.each do |place_loop|
+            @places["#{list_places[counter]}"]["#{place_loop}"] = values[loop_counter]
+            loop_counter+=1
+          end
+        end
+        counter+=1
 
         #Barcelona""Berlin""Brussels""Dublin""Hamburg""Kiev""London""Madrid""Milan""Moscow""Munich""Paris""Rome""Vienna""Warsaw"
 #        0"1497.61""1062.89""1469.29""1471.78""2391.06""1137.67""504.64""725.12""3006.93""1054.55""831.59""856.69""1347.43""1862.33"
-        array_of_values << line.split(",")
       }
+
+
       #places["barcelona"] = {"Moscow" => "234.5", "Hamburg" => "652.4"}
 
-      render :text => array_of_values
+     # render :text => places.inspect
     end
 
 end

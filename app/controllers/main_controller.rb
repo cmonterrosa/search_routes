@@ -7,7 +7,7 @@ require  'csv'
 class MainController < ApplicationController
   def index
       # Load data from data_set.csv
-      @data_filename = "#{RAILS_ROOT}/public/data/travel_cost.csv"
+      @data_filename = "#{RAILS_ROOT}/public/data/lugares_short_version.csv"
       @data_set = Ai4r::Data::DataSet.new.load_csv_with_labels @data_filename
       @data_set.data_items.collect! {|column| column.collect {|element| element.to_f}}
       Ai4r::GeneticAlgorithm::Chromosome.set_cost_matrix(@data_set.data_items)
@@ -33,7 +33,7 @@ class MainController < ApplicationController
 
 
     def dynamic_table
-      file = File.open("#{RAILS_ROOT}/public/data/travel_cost.csv")
+      file = File.open("#{RAILS_ROOT}/public/data/lugares_sort_version.csv")
       @places = Hash.new
       counter=0
       array_of_values=[]

@@ -6,7 +6,8 @@
         h "COST #{-1 * c.fitness} TOUR: "+ "#{c.data.collect{|c| @data_set.data_labels[c]} * ', '}"
       end
       h "Beginning genetic search, please wait... "
-      search = Ai4r::GeneticAlgorithm::GeneticSearch.new(800, 100)
+      #search = Ai4r::GeneticAlgorithm::GeneticSearch.new(800, 100)
+      search = Ai4r::GeneticAlgorithm::GeneticSearch.new(200, 200)
       result = search.run
       h "COST #{-1 * result.fitness} KM TOUR: "+
       "#{result.data.collect{|c| @data_set.data_labels[c]} * ', '}"
@@ -14,6 +15,13 @@
       # $7659.81 TOUR: Moscow, Kiev, Warsaw, Vienna, Munich, Berlin, Hamburg, Brussels, Dublin, London, Paris, Milan, Rome, Barcelona, Madrid
       # $7596.74 TOUR: Moscow, Kiev, Warsaw, Berlin, Hamburg, Vienna, Munich, Milan, Rome, Barcelona, Madrid, Paris, Brussels, London Dublin
 %>
+
+<p>
+  <h2>
+  Posibles combinaciones: <%=(10**10)%>
+  </h2>
+</p>
+
 
 
 <p>Restart</p>

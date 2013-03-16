@@ -188,3 +188,359 @@ NoMethodError (undefined method `move' for #<File:0xb6f63b6c>):
 Rendered rescues/_trace (37.5ms)
 Rendered rescues/_request_and_response (0.3ms)
 Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2013-03-13 19:15:39) [GET]
+Rendering main/index
+Completed in 15383ms (View: 15369, DB: 0) | 200 OK [http://localhost/main]
+
+
+Processing MainController#dynamic_table (for 127.0.0.1 at 2013-03-13 19:40:21) [GET]
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/main/dynamic_table]
+
+
+Processing MainController#dynamic_table (for 127.0.0.1 at 2013-03-13 19:40:53) [GET]
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/main/dynamic_table]
+
+
+Processing MainController#dynamic_table (for 127.0.0.1 at 2013-03-13 20:25:50) [GET]
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]=):
+  app/controllers/main_controller.rb:57:in `dynamic_table'
+  app/controllers/main_controller.rb:56:in `each'
+  app/controllers/main_controller.rb:56:in `dynamic_table'
+  app/controllers/main_controller.rb:53:in `each_line'
+  app/controllers/main_controller.rb:53:in `dynamic_table'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/local/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/local/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (25.1ms)
+Rendered rescues/_request_and_response (17.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#dynamic_table (for 127.0.0.1 at 2013-03-13 20:26:38) [GET]
+
+
+Processing MainController#dynamic_table (for 127.0.0.1 at 2013-03-13 20:36:25) [GET]
+
+
+Processing MainController#dynamic_table (for 127.0.0.1 at 2013-03-13 20:46:31) [GET]
+Completed in 4ms (View: 2, DB: 0) | 200 OK [http://localhost/main/dynamic_table]
+
+
+Processing MainController#dynamic_table (for 127.0.0.1 at 2013-03-13 20:49:53) [GET]
+Rendering main/dynamic_table
+Completed in 17ms (View: 15, DB: 0) | 200 OK [http://localhost/main/dynamic_table]
+
+
+Processing MainController#dynamic_table (for 127.0.0.1 at 2013-03-13 20:51:13) [GET]
+Rendering main/dynamic_table
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/main/dynamic_table]
+
+
+Processing MainController#dynamic_table (for 127.0.0.1 at 2013-03-13 21:09:56) [GET]
+Rendering main/dynamic_table
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/main/dynamic_table]
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("schema_migrations")[0m
+  [4;36;1mSQL (9.4ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreatePlaces (20130316002529)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "places" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(100)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20130316002529')[0m
+Migrating to CreateDistances (20130316002548)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "distances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from_id" integer, "to_id" integer, "kilometers" decimal) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20130316002548')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("distances")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("places")[0m
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2013-03-15 18:38:18) [GET]
+  [4;36;1mPlace Load (0.3ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#new (for 127.0.0.1 at 2013-03-15 18:38:21) [GET]
+Rendering template within layouts/places
+Rendering places/new
+Completed in 48ms (View: 45, DB: 0) | 200 OK [http://localhost/places/new]
+
+
+Processing PlacesController#create (for 127.0.0.1 at 2013-03-15 18:38:29) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"NHgE06PomEMW3P3/vx4O/vySeZsx6z+vDNu1NoiJ9PM=", "place"=>{"description"=>"Tuxtla Gutiérrez"}}
+  [4;35;1mPlace Create (27.8ms)[0m   [0mINSERT INTO "places" ("description") VALUES('Tuxtla Gutiérrez')[0m
+Redirected to http://localhost:3000/places/1
+Completed in 35ms (DB: 28) | 302 Found [http://localhost/places]
+
+
+Processing PlacesController#show (for 127.0.0.1 at 2013-03-15 18:38:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPlace Load (0.1ms)[0m   [0;1mSELECT * FROM "places" WHERE ("places"."id" = 1) [0m
+Rendering template within layouts/places
+Rendering places/show
+Completed in 65ms (View: 61, DB: 0) | 200 OK [http://localhost/places/1]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2013-03-15 18:38:30) [GET]
+  [4;35;1mPlace Load (0.3ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#new (for 127.0.0.1 at 2013-03-15 18:38:32) [GET]
+Rendering template within layouts/places
+Rendering places/new
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/places/new]
+
+
+Processing PlacesController#create (for 127.0.0.1 at 2013-03-15 18:38:40) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"NHgE06PomEMW3P3/vx4O/vySeZsx6z+vDNu1NoiJ9PM=", "place"=>{"description"=>"Tonalá"}}
+  [4;36;1mPlace Create (16.0ms)[0m   [0;1mINSERT INTO "places" ("description") VALUES('Tonalá')[0m
+Redirected to http://localhost:3000/places/2
+Completed in 71ms (DB: 16) | 302 Found [http://localhost/places]
+
+
+Processing PlacesController#show (for 127.0.0.1 at 2013-03-15 18:38:40) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mPlace Load (0.1ms)[0m   [0mSELECT * FROM "places" WHERE ("places"."id" = 2) [0m
+Rendering template within layouts/places
+Rendering places/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/places/2]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2013-03-15 18:38:41) [GET]
+  [4;36;1mPlace Load (0.3ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#new (for 127.0.0.1 at 2013-03-15 18:42:25) [GET]
+Rendering template within layouts/places
+Rendering places/new
+Completed in 83ms (View: 80, DB: 0) | 200 OK [http://localhost/places/new]
+
+
+Processing PlacesController#create (for 127.0.0.1 at 2013-03-15 18:42:31) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"NHgE06PomEMW3P3/vx4O/vySeZsx6z+vDNu1NoiJ9PM=", "place"=>{"description"=>"Cintalapa"}}
+  [4;35;1mPlace Create (34.6ms)[0m   [0mINSERT INTO "places" ("description") VALUES('Cintalapa')[0m
+Redirected to http://localhost:3000/places/3
+Completed in 41ms (DB: 35) | 302 Found [http://localhost/places]
+
+
+Processing PlacesController#show (for 127.0.0.1 at 2013-03-15 18:42:31) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mPlace Load (0.1ms)[0m   [0;1mSELECT * FROM "places" WHERE ("places"."id" = 3) [0m
+Rendering template within layouts/places
+Rendering places/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/places/3]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2013-03-15 18:42:32) [GET]
+  [4;35;1mPlace Load (0.3ms)[0m   [0mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/places]
+
+
+Processing PlacesController#new (for 127.0.0.1 at 2013-03-15 18:42:33) [GET]
+Rendering template within layouts/places
+Rendering places/new
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/places/new]
+
+
+Processing PlacesController#create (for 127.0.0.1 at 2013-03-15 18:42:38) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"NHgE06PomEMW3P3/vx4O/vySeZsx6z+vDNu1NoiJ9PM=", "place"=>{"description"=>"El bosque"}}
+  [4;36;1mPlace Create (0.3ms)[0m   [0;1mINSERT INTO "places" ("description") VALUES('El bosque')[0m
+Redirected to http://localhost:3000/places/4
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/places]
+
+
+Processing PlacesController#show (for 127.0.0.1 at 2013-03-15 18:42:38) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mPlace Load (0.1ms)[0m   [0mSELECT * FROM "places" WHERE ("places"."id" = 4) [0m
+Rendering template within layouts/places
+Rendering places/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/places/4]
+
+
+Processing PlacesController#index (for 127.0.0.1 at 2013-03-15 18:42:40) [GET]
+  [4;36;1mPlace Load (0.3ms)[0m   [0;1mSELECT * FROM "places" [0m
+Rendering template within layouts/places
+Rendering places/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/places]
+
+
+Processing DistancesController#index (for 127.0.0.1 at 2013-03-15 18:51:23) [GET]
+  [4;36;1mDistance Load (0.3ms)[0m   [0;1mSELECT * FROM "distances" [0m
+Rendering template within layouts/distances
+Rendering distances/index
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/distances]
+
+
+Processing DistancesController#new (for 127.0.0.1 at 2013-03-15 18:51:26) [GET]
+Rendering template within layouts/distances
+Rendering distances/new
+  [4;35;1mPlace Load (0.2ms)[0m   [0mSELECT * FROM "places" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "places" [0m
+Completed in 19ms (View: 16, DB: 0) | 200 OK [http://localhost/distances/new]
+
+
+Processing DistancesController#new (for 127.0.0.1 at 2013-03-15 18:53:07) [GET]
+Rendering template within layouts/distances
+Rendering distances/new
+  [4;36;1mPlace Load (0.2ms)[0m   [0;1mSELECT * FROM "places" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "places" [0m
+Completed in 20ms (View: 17, DB: 0) | 200 OK [http://localhost/distances/new]
+
+
+Processing DistancesController#create (for 127.0.0.1 at 2013-03-15 18:53:14) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"NHgE06PomEMW3P3/vx4O/vySeZsx6z+vDNu1NoiJ9PM=", "distance"=>{"kilometers"=>"0", "from_id"=>"1", "to_id"=>"1"}}
+  [4;36;1mDistance Create (0.3ms)[0m   [0;1mINSERT INTO "distances" ("kilometers", "from_id", "to_id") VALUES(0.0, 1, 1)[0m
+Redirected to http://localhost:3000/distances/1
+Completed in 16ms (DB: 0) | 302 Found [http://localhost/distances]
+
+
+Processing DistancesController#show (for 127.0.0.1 at 2013-03-15 18:53:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDistance Load (0.1ms)[0m   [0mSELECT * FROM "distances" WHERE ("distances"."id" = 1) [0m
+Rendering template within layouts/distances
+Rendering distances/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/distances/1]
+
+
+Processing DistancesController#index (for 127.0.0.1 at 2013-03-15 18:53:15) [GET]
+  [4;36;1mDistance Load (0.3ms)[0m   [0;1mSELECT * FROM "distances" [0m
+Rendering template within layouts/distances
+Rendering distances/index
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/distances]
+
+
+Processing DistancesController#new (for 127.0.0.1 at 2013-03-15 18:53:26) [GET]
+Rendering template within layouts/distances
+Rendering distances/new
+  [4;35;1mPlace Load (0.2ms)[0m   [0mSELECT * FROM "places" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "places" [0m
+Completed in 36ms (View: 32, DB: 0) | 200 OK [http://localhost/distances/new]
+
+
+Processing DistancesController#create (for 127.0.0.1 at 2013-03-15 18:53:36) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"NHgE06PomEMW3P3/vx4O/vySeZsx6z+vDNu1NoiJ9PM=", "distance"=>{"kilometers"=>"145.30", "from_id"=>"1", "to_id"=>"2"}}
+  [4;35;1mDistance Create (0.3ms)[0m   [0mINSERT INTO "distances" ("kilometers", "from_id", "to_id") VALUES(145.3, 1, 2)[0m
+Redirected to http://localhost:3000/distances/2
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/distances]
+
+
+Processing DistancesController#show (for 127.0.0.1 at 2013-03-15 18:53:36) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDistance Load (0.1ms)[0m   [0;1mSELECT * FROM "distances" WHERE ("distances"."id" = 2) [0m
+Rendering template within layouts/distances
+Rendering distances/show
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/distances/2]
+
+
+Processing DistancesController#index (for 127.0.0.1 at 2013-03-15 18:53:38) [GET]
+  [4;35;1mDistance Load (0.3ms)[0m   [0mSELECT * FROM "distances" [0m
+Rendering template within layouts/distances
+Rendering distances/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/distances]
+
+
+Processing DistancesController#new (for 127.0.0.1 at 2013-03-15 18:53:40) [GET]
+Rendering template within layouts/distances
+Rendering distances/new
+  [4;36;1mPlace Load (0.2ms)[0m   [0;1mSELECT * FROM "places" [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM "places" [0m
+Completed in 61ms (View: 57, DB: 0) | 200 OK [http://localhost/distances/new]
+
+
+Processing DistancesController#create (for 127.0.0.1 at 2013-03-15 18:53:50) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"NHgE06PomEMW3P3/vx4O/vySeZsx6z+vDNu1NoiJ9PM=", "distance"=>{"kilometers"=>"33.56", "from_id"=>"1", "to_id"=>"3"}}
+  [4;36;1mDistance Create (0.3ms)[0m   [0;1mINSERT INTO "distances" ("kilometers", "from_id", "to_id") VALUES(33.56, 1, 3)[0m
+Redirected to http://localhost:3000/distances/3
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/distances]
+
+
+Processing DistancesController#show (for 127.0.0.1 at 2013-03-15 18:53:50) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mDistance Load (0.1ms)[0m   [0mSELECT * FROM "distances" WHERE ("distances"."id" = 3) [0m
+Rendering template within layouts/distances
+Rendering distances/show
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/distances/3]
+
+
+Processing DistancesController#index (for 127.0.0.1 at 2013-03-15 18:53:52) [GET]
+  [4;36;1mDistance Load (0.3ms)[0m   [0;1mSELECT * FROM "distances" [0m
+Rendering template within layouts/distances
+Rendering distances/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/distances]
+
+
+Processing DistancesController#new (for 127.0.0.1 at 2013-03-15 18:53:57) [GET]
+Rendering template within layouts/distances
+Rendering distances/new
+  [4;35;1mPlace Load (0.2ms)[0m   [0mSELECT * FROM "places" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "places" [0m
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/distances/new]
+
+
+Processing DistancesController#create (for 127.0.0.1 at 2013-03-15 18:54:17) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"NHgE06PomEMW3P3/vx4O/vySeZsx6z+vDNu1NoiJ9PM=", "distance"=>{"kilometers"=>"45", "from_id"=>"1", "to_id"=>"3"}}
+  [4;35;1mDistance Create (0.3ms)[0m   [0mINSERT INTO "distances" ("kilometers", "from_id", "to_id") VALUES(45.0, 1, 3)[0m
+Redirected to http://localhost:3000/distances/4
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/distances]
+
+
+Processing DistancesController#show (for 127.0.0.1 at 2013-03-15 18:54:17) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mDistance Load (0.1ms)[0m   [0;1mSELECT * FROM "distances" WHERE ("distances"."id" = 4) [0m
+Rendering template within layouts/distances
+Rendering distances/show
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/distances/4]
+
+
+Processing DistancesController#index (for 127.0.0.1 at 2013-03-15 18:54:19) [GET]
+  [4;35;1mDistance Load (0.3ms)[0m   [0mSELECT * FROM "distances" [0m
+Rendering template within layouts/distances
+Rendering distances/index
+Completed in 12ms (View: 9, DB: 0) | 200 OK [http://localhost/distances]

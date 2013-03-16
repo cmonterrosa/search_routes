@@ -1,9 +1,11 @@
 Distances
 
-<%@places.each do |place, value|%>
-
-<%=h place.inspect%> | <%=h value%>
-
+<%@places.each do |key_main, value_main|%>
+<h2><%=h key_main%></h2>
+    <%value_main.each do |key,value|%>
+        <h4><%=h key%> = <%=h value%></h4><br />
+    <%end%>
+------------------------------------------------
 <%end%>
 
 

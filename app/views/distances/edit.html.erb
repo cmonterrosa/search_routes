@@ -1,0 +1,24 @@
+<h1>Editing distance</h1>
+
+<% form_for(@distance) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :from_id %><br />
+    <%= f.text_field :from_id %>
+  </p>
+  <p>
+    <%= f.label :to_id %><br />
+    <%= f.text_field :to_id %>
+  </p>
+  <p>
+    <%= f.label :kilometers %><br />
+    <%= f.text_field :kilometers %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @distance %> |
+<%= link_to 'Back', distances_path %>

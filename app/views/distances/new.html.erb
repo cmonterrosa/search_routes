@@ -1,0 +1,23 @@
+<h1>New distance</h1>
+
+<% form_for(@distance) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label "From City" %><br />
+    <%= f.collection_select(:from_id, Place.all, :id, :description) %>
+  </p>
+  <p>
+    <%= f.label "To City" %><br />
+    <%= f.collection_select(:to_id, Place.all, :id, :description) %>
+  </p>
+  <p>
+    <%= f.label "Distance in kilometers" %><br />
+    <%= f.text_field :kilometers %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', distances_path %>

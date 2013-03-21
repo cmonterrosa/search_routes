@@ -1,0 +1,24 @@
+<h1>Listing distances</h1>
+
+<table>
+  <tr>
+    <th>From</th>
+    <th>To</th>
+    <th>Kilometers</th>
+  </tr>
+
+<% @distances.each do |distance| %>
+  <tr>
+    <td><%=h distance.from_id %></td>
+    <td><%=h distance.to_id %></td>
+    <td><%=h distance.kilometers %></td>
+    <td><%= link_to 'Show', distance %></td>
+    <td><%= link_to 'Edit', edit_distance_path(distance) %></td>
+    <td><%= link_to 'Destroy', distance, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New distance', new_distance_path %> | <%= link_to 'Show table', table_distance_path %>

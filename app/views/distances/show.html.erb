@@ -1,0 +1,18 @@
+<p>
+  <b>From:</b>
+  <%=h @distance.from_id %>
+</p>
+
+<p>
+  <b>To:</b>
+  <%=h @distance.to_id %>
+</p>
+
+<p>
+  <b>Kilometers:</b>
+  <%=h @distance.kilometers %>
+</p>
+
+
+<%= link_to 'Edit', edit_distance_path(@distance) %> |
+<%= link_to 'Back', distances_path %>

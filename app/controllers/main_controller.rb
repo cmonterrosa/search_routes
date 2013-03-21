@@ -5,6 +5,36 @@ require  'lib/statistics'
 require  'csv'
 
 class MainController < ApplicationController
+
+
+  def select_places
+    
+  end
+
+  def search
+    places = Place.find(params[:table][:places_ids])
+    @num_combinaciones = places.size ** places.size
+    titles=Array.new
+    file = File.new("#{RAILS_ROOT}/public/data/temporal.csv", "w")
+    places.each{|place| titles << place.description }
+    file.puts(titles.join(","))
+    places.each{|place|
+      values = Array.new
+      places.each {|p| values << Distance.find(:first, :select => "kilometers", :conditions => ["from_id = ? AND to_id = ?", place.id, p.id]).kilometers}
+      file.puts(values.join(","))
+    }
+    #ACALA,ARRIAGA,COPAINALA,ESCUINTLA,SOYALO,TAPACHULA,TUMBALA,TUXTLA GUTIERREZ,YAJALON
+    file.close
+
+    #---- Load data ---
+         # Load data from data_set.csv
+      @data_filename = "#{RAILS_ROOT}/public/data/temporal.csv"
+      @data_set = Ai4r::Data::DataSet.new.load_csv_with_labels @data_filename
+      @data_set.data_items.collect! {|column| column.collect {|element| element.to_f}}
+      Ai4r::GeneticAlgorithm::Chromosome.set_cost_matrix(@data_set.data_items)
+  end
+
+
   def index
       # Load data from data_set.csv
       @data_filename = "#{RAILS_ROOT}/public/data/lugares_short_version.csv"

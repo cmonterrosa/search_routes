@@ -1,10 +1,17 @@
-require  'lib/genetic_algorithm'
-require  'lib/data_set'
-require  'lib/data_set'
-require  'lib/statistics'
+#require  'lib/genetic_algorithm'
+require  'genetic_algorithm'
+#require  'lib/data_set'
+require  'data_set'
+#require  'lib/data_set'
+require  'statistics'
+#require  'lib/statistics'
 require  'csv'
 
 class MainController < ApplicationController
+
+  def index
+    redirec_to :action => "select_places" 
+  end
 
 
   def select_places
